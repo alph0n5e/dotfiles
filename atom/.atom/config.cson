@@ -1,0 +1,56 @@
+"*":
+  "atom-terminal":
+    MacWinRunDirectly: true
+  "autocomplete-python":
+    useKite: false
+  core:
+    disabledPackages: [
+      "Hydrogen"
+    ]
+    excludeVcsIgnoredPaths: false
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "no"
+    themes: [
+      "one-light-ui"
+      "one-dark-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    invisibles: {}
+    showInvisibles: true
+    softWrap: true
+    tabLength: 2
+  emmet: {}
+  "exception-reporting":
+    userId: "5c12b936-7288-9964-607a-fa9f44dc037b"
+  "file-icons": {}
+  linter:
+    displayLinterInfo: false
+    displayLinterStatus: false
+    lintOnFly: false
+    showErrorTabProject: false
+  "linter-eslint": {}
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  minimap: {}
+  pigments:
+    markerType: "square-dot"
+  "platformio-ide-terminal":
+    style:
+      theme: "pro"
+  "project-manager": {}
+  "seti-syntax":
+    themeColor: "Orange"
+  "seti-ui":
+    font: "Default Atom Font"
+  "terminal-plus":
+    core:
+      autoRunCommand: "pwd"
+    style: {}
+    toggles: {}
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+".pug.source":
+  whitespace:
+    removeTrailingWhitespace: false

@@ -2,4 +2,4 @@
 
 ## Requirements
 - Homebrew
-- `brew install git bash-completion`
+- `$ brew install git bash-completion`

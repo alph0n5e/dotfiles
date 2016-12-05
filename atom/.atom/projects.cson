@@ -1,0 +1,48 @@
+[
+  {
+    title: "tz:incontrol-cloud"
+    group: "TypeZero"
+    paths: [
+      "/Users/antnrbt/Workspace/src/github.com/Type-Zero/incontrol-cloud"
+    ]
+    icon: "icon-repo"
+  }
+  {
+    title: "tz:incontrol-ap"
+    group: "TypeZero"
+    paths: [
+      "/Users/antnrbt/Workspace/src/github.com/Type-Zero/incontrol-ap"
+    ]
+    icon: "icon-repo"
+  }
+  {
+    title: "tz:alpaca"
+    group: "TypeZero"
+    paths: [
+      "/Users/antnrbt/Workspace/src/github.com/Type-Zero/alpaca"
+    ]
+    icon: "icon-repo"
+  }
+  {
+    title: "tz:apex-python3-boilerplate"
+    group: "TypeZero"
+    paths: [
+      "/Users/antnrbt/Workspace/src/github.com/Type-Zero/apex-python3-boilerplate"
+    ]
+    icon: "icon-repo"
+  }
+  {
+    title: "alph0n5e:foundation-test"
+    group: "Perso"
+    paths: [
+      "/Users/antnrbt/Workspace/src/github.com/alph0n5e/foundation-test"
+    ]
+  }
+  {
+    title: "tz:friday"
+    group: "TypeZero"
+    paths: [
+      "/Users/antnrbt/Workspace/src/github.com/Type-Zero/friday"
+    ]
+  }
+]
