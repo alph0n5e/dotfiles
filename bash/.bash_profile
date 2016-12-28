@@ -3,13 +3,19 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+source ~/.bash/docker-machine-prompt.sh
 source ~/.bash/colors.sh
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 
-export PS1="\[${COLOR_DEFAULT}\]\u \[${COLOR_DARK_GRAY}\]@ \[${COLOR_DEFAULT}\]\h\[${COLOR_DARK_GRAY}\] in \[${COLOR_DEFAULT}\]\W\$(__git_ps1)\[${COLOR_DARK_GRAY}\]:\n$\[${COLOR_DEFAULT}\] "
+DOCKER_MACHINE_PS1_SHOWSTATUS=1
+
+export PS1="\
+\[${COLOR_DEFAULT}\]\u \[${COLOR_DARK_GRAY}\]@ \[${COLOR_DEFAULT}\]\h\[${COLOR_DARK_GRAY}\] in \[${COLOR_DEFAULT}\]\W\
+\[${COLOR_LIGHT_CYAN}\]\$(__docker_machine_ps1 \" [%s]\")\[${COLOR_DEFAULT}\]\
+\[${COLOR_LIGHT_YELLOW}\]\$(__git_ps1 \" (%s)\")\[${COLOR_DEFAULT}\]\[${COLOR_DARK_GRAY}\]:\n$\[${COLOR_DEFAULT}\] "
 
 # Android (ADT)
 export ANDROID_HOME=~/Code/Android/sdk
