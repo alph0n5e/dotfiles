@@ -18,12 +18,30 @@ PROMPT=$'%B%n%b %F{7}@%f %B%m%b %F{7}in%f %B%~%b\$vcs_info_msg_0_%F{7}:%f\n%# '
 alias ls='ls -GFh'
 alias ll='ls -al'
 
+# Homebrew 
+PATH="/opt/homebrew/bin:${PATH}"
+
 # Python
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 
 # Ruby
-PATH="/usr/local/opt/ruby/bin:${PATH}"
-PATH="${HOME}/.gem/ruby/2.7.0/bin:${PATH}"
+PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
+
+# NVM (non Homebrew)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Visual Studio Code
+PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# GoLang
+export GOPATH="${HOME}/Code"
+export GOBIN="${GOPATH}/bin"
+PATH="$GOBIN:${PATH}"
+
+
 export PATH
