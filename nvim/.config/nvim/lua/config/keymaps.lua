@@ -1,4 +1,4 @@
-print('loading keymaps...')
+-- print('loading keymaps...')
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
