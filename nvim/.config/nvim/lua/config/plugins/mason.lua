@@ -8,7 +8,9 @@ return {
       "cssls",
       "svelte",
       "eslint",
+      -- "prettier",
       "gopls",
+      "ruff",
       "pyright",
     }
   },

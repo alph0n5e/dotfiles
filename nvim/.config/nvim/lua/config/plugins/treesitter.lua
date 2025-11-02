@@ -1,14 +1,29 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  lazy = false,
   config = function()
     local config = require("nvim-treesitter.configs")
+    ---@diagnostic disable-next-line: missing-fields
     config.setup({
-      ensure_installed = { "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "typescript", "go", "svelte" },
+      ensure_installed = {
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "javascript",
+        "typescript",
+        "svelte",
+        "go",
+      },
+      sync_install = false,
       auto_install = false,
       highlight = {
         enabled = true,
-        disable = function(lang, buff)
+        disable = function(_, buf)
           local max_filesize = 100 * 1024
           local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
           if ok and stats and stats.size > max_filesize then
@@ -20,4 +35,3 @@ return {
     })
   end
 }
-
