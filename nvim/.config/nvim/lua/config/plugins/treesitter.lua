@@ -13,6 +13,7 @@ return {
         "query",
         "markdown",
         "markdown_inline",
+        "css",
         "python",
         "javascript",
         "typescript",
