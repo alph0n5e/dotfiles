@@ -10,3 +10,5 @@ opt.number = true
 opt.relativenumber = false
 
 opt.clipboard = "unnamedplus"
+
+opt.signcolumn = "yes:1"
