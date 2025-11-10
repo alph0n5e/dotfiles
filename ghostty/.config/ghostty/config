@@ -11,3 +11,7 @@ unfocused-split-opacity = 0.5
 mouse-hide-while-typing = true
 
 font-size = 14
+
+font-feature = -calt
+font-feature = -dlig
+font-feature = -liga

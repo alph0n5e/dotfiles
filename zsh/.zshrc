@@ -17,6 +17,7 @@ PROMPT=$'%B%n%b %F{7}@%f %B%m%b %F{7}in%f %B%~%b\$vcs_info_msg_0_%F{7}:%f\n%# '
 # Aliases
 alias ls='ls -GFh'
 alias ll='ls -al'
+alias vim=nvim
 
 # Homebrew 
 PATH="/opt/homebrew/bin:${PATH}"

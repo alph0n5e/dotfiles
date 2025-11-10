@@ -3,9 +3,8 @@ return {
   build = ":TSUpdate",
   lazy = false,
   config = function()
-    local config = require("nvim-treesitter.configs")
     ---@diagnostic disable-next-line: missing-fields
-    config.setup({
+    require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "lua",
         "vim",
