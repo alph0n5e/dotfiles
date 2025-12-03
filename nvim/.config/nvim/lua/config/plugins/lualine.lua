@@ -15,32 +15,32 @@ return {
             right_padding = 2
           },
         },
-        lualine_z = {
+        --        lualine_z = {
+        --          {
+        --            "location",
+        --            separator = { right = "" },
+        --            padding = { left = 0, right = 0 },
+        --          }
+        --        },
+        lualine_y = {
+          {
+            "progress",
+            separator = " ",
+            padding = { left = 1, right = 0 },
+          },
           {
             "location",
-            separator = { right = "" },
-            padding = { left = 0, right = 0 },
-          }
+            padding = { left = 0, right = 1 },
+          },
         },
-        --       lualine_y = {
-        --         {
-        --           "progress",
-        --           separator = " ",
-        --           padding = { left = 1, right = 0 },
-        --         },
-        --         {
-        --           "location",
-        --           padding = { left = 0, right = 1 },
-        --         },
-        --        },
-        --       lualine_z = {
-        --         {
-        --           function()
-        --             return " " .. os.date("%R")
-        --           end,
-        --           separator = { right = "" },
-        --         },
-        --       },
+        lualine_z = {
+          {
+            function()
+              return " " .. os.date("%R")
+            end,
+            separator = { right = "" },
+          },
+        },
       },
     })
   end
