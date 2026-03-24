@@ -23,8 +23,6 @@ alias vim=nvim
 PATH="/opt/homebrew/bin:${PATH}"
 
 # Python
-# Following removed in favor of 'pyenv' installs
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:${PATH}"
@@ -49,7 +47,7 @@ export GOBIN="${GOPATH}/bin"
 PATH="$GOBIN:${PATH}"
 
 # POSTGRESQL
-PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
 export PATH
 
@@ -133,3 +131,6 @@ eval "$(zoxide init zsh)"
 ## Starship (command prompt)
 eval "$(starship init zsh)"
 
+## UV Completion
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
