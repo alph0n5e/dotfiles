@@ -33,11 +33,6 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.14/bin:${PATH}"
 PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
 
-# NVM (non Homebrew)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Visual Studio Code
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -134,3 +129,6 @@ eval "$(starship init zsh)"
 ## UV Completion
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
