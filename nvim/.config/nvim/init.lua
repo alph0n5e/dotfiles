@@ -206,6 +206,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-lualine/lualine.nvim' },
   { src = 'https://github.com/ibhagwan/fzf-lua' },
   { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
+  { src = 'https://github.com/lewis6991/gitsigns.nvim',  branch = 'main' },
   {
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
     branch = 'main',
@@ -309,6 +310,9 @@ vim.keymap.set('n', '<leader>fx', function() require('fzf-lua').diagnostics_docu
 vim.keymap.set('n', '<leader>fX', function() require('fzf-lua').diagnostics_workspace() end,
   { desc = 'FZF Diagnostics Workspace' })
 
+
+-- GitSigns
+require('gitsigns').setup()
 
 -- ===================
 -- LSP & Completion
