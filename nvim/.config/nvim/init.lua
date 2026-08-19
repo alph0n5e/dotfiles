@@ -466,8 +466,9 @@ vim.lsp.config('lua_ls', {
     }
   }
 })
-
-vim.lsp.config('svelte-language-server', {})
+vim.lsp.config('ts_ls', {})
+vim.lsp.config('eslint', {})
+vim.lsp.config('svelte', {})
 vim.lsp.config('pyright', {
   settings = {
     pyright = {
@@ -485,6 +486,10 @@ vim.lsp.config('gopls', {})
 
 vim.lsp.enable({
   'lua_ls',
+  'ts_ls',
+  'eslint',
+  -- 'oxlint',
+  -- 'oxfmt',
   'svelte',
   'pyright',
   'ruff',
