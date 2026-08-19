@@ -214,6 +214,7 @@ vim.pack.add({
   },
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/mason-org/mason.nvim' },
+  { src = 'https://github.com/stevearc/conform.nvim' },
 })
 
 -- Theme & transparency
@@ -227,6 +228,26 @@ vim.cmd.colorscheme('catppuccin')
 
 -- Mason - mostly to install LSP, Parsers and Formatters
 require('mason').setup()
+
+-- Conform - formatting with Prettier
+require('conform').setup({
+  formatters_by_ft = {
+    javascript = { 'prettier' },
+    typescript = { 'prettier' },
+    javascriptreact = { 'prettier' },
+    typescriptreact = { 'prettier' },
+    svelte = { 'prettier' },
+    css = { 'prettier' },
+    html = { 'prettier' },
+    json = { 'prettier' },
+    yaml = { 'prettier' },
+    markdown = { 'prettier' },
+  },
+  format_on_save = {
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+})
 
 -- Lualine - Custom status bar with Catppuccin-themed capabilities
 require("lualine").setup({
@@ -343,7 +364,9 @@ vim.diagnostic.config({
 local on_lsp_attach = function(ev)
   local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 
-  vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format, { desc = 'Language format' })
+  vim.keymap.set('n', '<leader>lf', function()
+    require('conform').format({ bufnr = ev.buf, lsp_fallback = true })
+  end, { desc = 'Language format' })
 
   -- Ruff-specific: defer to Pyright for hover
   if client.name == 'ruff' then
@@ -357,8 +380,11 @@ local on_lsp_attach = function(ev)
   end
 
   -- Enable auto formatting on save if available
+  -- Skip for ts_ls and eslint - let conform.nvim handle JS/TS formatting
   if not client:supports_method('textDocument/willSaveWaitUntil')
-      and client:supports_method('textDocument/formatting') then
+      and client:supports_method('textDocument/formatting')
+      and client.name ~= 'ts_ls'
+      and client.name ~= 'eslint' then
     vim.api.nvim_create_autocmd('BufWritePre', {
       group = augroup,
       buffer = ev.buf,
