@@ -70,29 +70,6 @@ source "$ZDOTDIR/prompt.zsh"
 # Plugins & manager
 # source "$ZDOTDIR/plugins.zsh"
 
-# POSTGRESQL
-PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
-
-export PATH
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-# bun completions
-[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
-
-
-# pnpm
-export PNPM_HOME="/Users/alph0n5e/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
-
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/alph0n5e/.docker/completions $fpath)
 # End of Docker CLI completions
@@ -104,6 +81,3 @@ eval "$(zoxide init zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
-
-# opencode
-export PATH=/Users/alph0n5e/.opencode/bin:$PATH

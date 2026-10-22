@@ -15,9 +15,16 @@ export GPG_TTY=$(tty)
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
 
 # ----- PATH ------
+# Remove duplicate entries from $PATH and $path (a zsh-specific variable)
+typeset -U PATH path
+
 export PATH="$HOME/.local/bin:$PATH"
+
 # Add Homebrew binaries to PATH
 export PATH="/opt/homebrew/bin:${PATH}"
+
+# POSTGRESQL
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
 # Python
 export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
@@ -27,13 +34,20 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${PATH}"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.14/bin:${PATH}"
 
 # Visual Studio Code
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
 
 # ----- RUST ------
+export PATH="$HOME/.cargo/bin:$PATH"
 . "$HOME/.cargo/env"
 
-# ----- VITE+ ------
-. "$HOME/.vite-plus/env"
+# ----- VITE PLUS -----
+. "$XDG_CONFIG_HOME/vite-plus/env"
+
+# ----- BUN -----
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# bun completions
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
 
 # ----- Pager ------
 if command -v bat >/dev/null 2>&1; then
@@ -43,8 +57,8 @@ elif command -v batcat >/dev/null 2>&1; then
 fi
 
 # ----- NVM ------
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # pnpm
 export PNPM_HOME="/Users/alph0n5e/Library/pnpm"
@@ -53,3 +67,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+# ----- OpenCode -----
+export PATH="/Users/alph0n5e/.opencode/bin:$PATH"
