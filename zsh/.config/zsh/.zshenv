@@ -26,6 +26,9 @@ export PATH="/opt/homebrew/bin:${PATH}"
 # POSTGRESQL
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
+# ----- Docker ------
+export PATH="$HOME/.docker/bin:$PATH"
+
 # Python
 export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
@@ -69,4 +72,11 @@ esac
 # pnpm end
 
 # ----- OpenCode -----
-export PATH="/Users/alph0n5e/.opencode/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# ----- SDKMAN (Java, JDK, etc...) ----
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
